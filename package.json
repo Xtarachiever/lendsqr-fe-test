@@ -7,24 +7,17 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
-<<<<<<< HEAD
-    "preview": "vite preview"
-=======
     "preview": "vite preview",
     "build-css": "node-sass --output-style compressed -o css/ styles/"
->>>>>>> de78629 (Worked on the login and dashboard page)
   },
   "dependencies": {
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
   },
   "devDependencies": {
-<<<<<<< HEAD
-=======
     "@hookform/resolvers": "^3.6.0",
     "@tanstack/react-table": "^8.10.7",
     "@types/node": "^20.14.8",
->>>>>>> de78629 (Worked on the login and dashboard page)
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
     "@typescript-eslint/eslint-plugin": "^7.13.1",
@@ -33,10 +26,6 @@
     "eslint": "^8.57.0",
     "eslint-plugin-react-hooks": "^4.6.2",
     "eslint-plugin-react-refresh": "^0.4.7",
-<<<<<<< HEAD
-    "typescript": "^5.2.2",
-    "vite": "^5.3.1"
-=======
     "node-sass": "^9.0.0",
     "react-hook-form": "^7.52.0",
     "react-icons": "^5.2.1",
@@ -45,6 +34,5 @@
     "typescript": "^5.2.2",
     "vite": "^5.3.1",
     "yup": "^1.4.0"
->>>>>>> de78629 (Worked on the login and dashboard page)
   }
 }
