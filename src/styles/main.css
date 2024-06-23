@@ -157,6 +157,10 @@
   padding-right: 10px;
   padding-left: 20px;
 }
+.layout_container .sidebar-container .active_link {
+  background: rgba(57, 205, 204, 0.3);
+  border-left: 4px solid #39CDCC;
+}
 .layout_container .sidebar-container .segments .side_headers {
   font-size: 12px;
   padding-top: 15px;
@@ -258,6 +262,44 @@
 .table-div table tbody tr td .popup-action .popup p svg {
   margin-right: 8px;
 }
+.table-div .pagination {
+  padding-top: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.table-div .pagination .pageIndex {
+  display: flex;
+  align-items: center;
+}
+.table-div .pagination .pageIndex button.pagesArr {
+  outline: none;
+  border: none;
+  margin: 0px 5px;
+  padding: 8px;
+  cursor: pointer;
+  background-color: transparent;
+  color: rgba(33, 63, 125, 0.6);
+}
+.table-div .pagination .pageIndex button.next,
+.table-div .pagination .pageIndex button.prev {
+  border: none;
+  background-color: rgba(33, 63, 125, 0.2);
+  width: 30px;
+  height: 30px;
+  border-radius: 5px;
+  margin: 0px 10px;
+  cursor: pointer;
+}
+.table-div .pagination .pageIndex button.next svg,
+.table-div .pagination .pageIndex button.prev svg {
+  color: #213F7D;
+}
+
+.filter-wrapper .filter-div .select-div p {
+  padding-bottom: 5px;
+  padding-top: 5px;
+}
 
 .detail_card_collection {
   display: grid;
@@ -281,6 +323,30 @@
 
 .table_wrapper {
   padding-top: 50px;
+  position: relative;
+}
+.table_wrapper .filter_wrapper {
+  position: absolute;
+  top: 60px;
+  margin-top: 40px;
+  left: 30px;
+  width: 300px;
+  background: #ffffff;
+  padding: 30px 15px;
+  box-shadow: rgba(33, 63, 125, 0.06) 0px 7px 29px 0px;
+}
+.table_wrapper .filter_wrapper .input input {
+  padding: 15px;
+}
+.table_wrapper .filter_wrapper .buttons {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  margin-top: 10px;
+}
+.table_wrapper .filter_wrapper .buttons div {
+  width: 100%;
 }
 
 .small-font {
@@ -320,6 +386,10 @@
   width: 100%;
 }
 
+.smaller_button {
+  padding: 0.8em 1em;
+}
+
 .status_button {
   border: none;
   border-radius: 15px;
@@ -344,4 +414,58 @@
 .pending {
   color: #E9B200;
   background: rgba(233, 178, 0, 0.2);
+}
+
+.select-wrapper {
+  display: flex;
+  align-items: center;
+}
+.select-wrapper .select-page {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: 0px 8px;
+  width: 70px;
+}
+.select-wrapper .select-page select {
+  outline: none;
+  background-color: rgba(33, 63, 125, 0.2);
+  color: #213F7D;
+  border: none;
+  padding: 10px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  position: relative;
+  width: 70px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.select-wrapper .select-page:after {
+  content: "";
+  background: url("/arrow_down.svg") no-repeat right center;
+  background-size: 15px;
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  pointer-events: none;
+}
+.select-wrapper .select_form {
+  width: 100%;
+  margin: 0px 0px;
+  width: 100%;
+}
+.select-wrapper .select_form select {
+  border: 2px solid rgba(84, 95, 125, 0.15);
+  background: #ffffff;
+  padding: 15px;
+  width: 100%;
+}
+.select-wrapper .select_form:after {
+  top: 15px;
+  right: 20px;
 }/*# sourceMappingURL=main.css.map */

@@ -10,15 +10,41 @@ import { BsThreeDotsVertical } from "react-icons/bs";
 import { FiUserX } from "react-icons/fi";
 import { RiUserFollowLine } from "react-icons/ri";
 import { BsEye } from "react-icons/bs";
+import FilterCard from "../components/ReusableCards/FilterCard";
 
-interface DataItem {
-  id: number;
-  name: string;
+type formProps ={
+  organization:string
+  phoneNumber:string
+  username:string
+  email:string
+  status:string
+  date:string
 }
+interface DataItem {
+  profile: {
+    organization: string[];
+    phone:string;
+  };
+  id: number;
+  email:string;
+  name: string;
+  phone: string;
+  username:string;
+  status:string[];
+  createdAt:string;
+  // Add other fields if necessary
+}
+
 
 const HomePage = () => {
   const [data, setData] = useState<DataItem[]>([])
+  const [filterPopUp, setFilterPopUp] = useState<boolean>(false);
   const [activeDiv, setActiveDiv] = useState<{ [key: string]: boolean } | null>(null)
+
+  const [loading, setLoading] = useState<boolean>(false);
+
+  // Filter out the Active users
+  const activeUsers = data?.filter((item: { status: string[] } )=> item?.status[0].toLowerCase() === 'active');
 
   const handleSelected = (id:string) => {
     setActiveDiv((prevSelectedItems) => ({
@@ -29,6 +55,7 @@ const HomePage = () => {
 
   const fetchData = async () =>{
     try{
+      setLoading(true);
       await fetch('https://api.json-generator.com/templates/jWExjdifhpfn/data',{
         method:"GET",
         headers:{
@@ -37,11 +64,43 @@ const HomePage = () => {
       })
       .then((response)=>response.json())
       .then(data=>{
+        setLoading(false)
         setData(data)
       })
     }catch(e){
       console.log(e)
     }
+  }
+
+  let filteredData = [...data] as DataItem[];
+
+  const handleFilter = (values:formProps) =>{
+    if(values?.organization !== ''){
+        filteredData = data?.filter((item: { profile: { organization: string[]} }) => item?.profile?.organization[0] === values?.organization)
+    }
+    if(values?.phoneNumber !== ''){
+        filteredData = data?.filter((item: { profile: { phone: string } } )=> item?.profile?.phone === values?.phoneNumber);
+    }
+    if(values?.username !== ''){
+      filteredData = data?.filter((item: { username: string } )=> item?.username === values?.username);
+    }
+    if(values?.email !== ''){
+      filteredData = data?.filter((item: { email: string } )=> item?.email === values?.email);
+    }
+    if(values?.status !== ''){
+      filteredData = data?.filter((item: { status: string[] } )=> item?.status[0] === values?.status);
+    }
+    if(values?.date !== ''){
+      filteredData = data?.filter((item: { createdAt: string } )=> item?.createdAt.slice(0, 10) === values?.date);
+    }
+    setData(filteredData)
+    setFilterPopUp(false)
+  }
+
+  const handleReset = (reset:any) =>{
+    reset();
+    fetchData();
+    setFilterPopUp(false)
   }
 
   const options: Intl.DateTimeFormatOptions = {
@@ -121,15 +180,26 @@ const HomePage = () => {
           <div>
               <p className="large-font">Users</p>
               <div className="detail_card_collection">
-                <DetailCard img={UserIcon} header="users" number="2,453"/>
-                <DetailCard img={ActiveUsers} header="active users" number="2,453"/>
-                <DetailCard img={UserLoans} header="users with loans" number="2,453"/>
-                <DetailCard img={UsersSaving} header="users with savings" number="2,453"/>
+                <DetailCard img={UserIcon} header="users" number={data?.length ? data?.length.toString() : '0'}/>
+                <DetailCard img={ActiveUsers} header="active users" number={activeUsers?.length ? activeUsers?.length?.toString() : '0'}/>
+                <DetailCard img={UserLoans} header="users with loans" number="253"/>
+                <DetailCard img={UsersSaving} header="users with savings" number="43"/>
               </div>
           </div>
-          <div className="table_wrapper">
-            <BasicTable data={data} columns={columns}/>
-          </div>
+          {
+            loading ? <p>Loading...</p>
+            :
+            <div className="table_wrapper">
+              <BasicTable data={data} columns={columns} filterPopUp={filterPopUp} setFilterPopUp={setFilterPopUp} />
+              {
+                filterPopUp ?
+                <div className="filter_wrapper">
+                  <FilterCard data={data} handleFilter={handleFilter} handleReset={handleReset}/>
+                </div>
+                : <></>
+              }
+            </div>
+          }
          </div>
       </Layout>
     </div>

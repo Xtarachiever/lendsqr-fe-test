@@ -1,3 +1,4 @@
+
 .detail_card
     @include flex-center
     @include flex-column-start
@@ -65,3 +66,40 @@
                                 padding-bottom: 10px
                                 svg
                                     margin-right: 8px
+    .pagination
+        padding-top: 15px
+        display: flex
+        align-items: center
+        justify-content: space-between
+        .pageIndex
+            display: flex
+            align-items: center
+            button.pagesArr
+                outline: none
+                border: none
+                margin: 0px 5px
+                padding: 8px
+                cursor: pointer
+                background-color: transparent
+                color: rgba($color: $darkBlue, $alpha: 0.60)
+            button.next,
+            button.prev
+                border: none
+                background-color: rgba($color: $darkBlue, $alpha: 0.20)
+                width: 30px
+                height: 30px
+                border-radius: 5px
+                margin: 0px 10px
+                cursor: pointer
+                svg
+                    color: $darkBlue
+.filter-wrapper
+    .filter-div
+        .select-div
+            p
+                padding-bottom: 5px
+                padding-top: 5px
+
+                
+            
+        

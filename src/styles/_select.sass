@@ -1,0 +1,46 @@
+.select-div
+.select-wrapper
+    display: flex
+    align-items: center
+    .select-page
+        position: relative
+        display: flex
+        align-items: center
+        width: fit-content
+        margin: 0px 8px
+        width: 70px
+        select
+            outline: none
+            background-color: rgba($darkBlue, 0.20)
+            color: $darkBlue
+            border: none
+            padding: 10px
+            -webkit-appearance: none
+            -moz-appearance: none
+            appearance: none
+            position: relative
+            width: 70px
+            border-radius: 5px
+            cursor: pointer
+        &:after
+            content: ''
+            background: url('/arrow_down.svg') no-repeat right center
+            background-size: 15px
+            width: 20px
+            height: 20px 
+            position: absolute
+            top: 8px
+            right: 8px
+            pointer-events: none
+    .select_form
+        width: 100%
+        margin: 0px 0px
+        width: 100%
+        select
+            border: 2px solid $border-color
+            background: $white
+            padding: 15px
+            width: 100%
+        &:after
+            top: 15px
+            right: 20px

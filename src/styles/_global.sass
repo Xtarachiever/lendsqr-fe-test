@@ -6,3 +6,24 @@
         @include grid-cols-1
 .table_wrapper
     padding-top: 50px
+    position: relative
+    .filter_wrapper
+        position: absolute
+        top: 60px
+        margin-top: 40px
+        left:30px 
+        width: 300px
+        background: $white
+        padding: 30px 15px
+        box-shadow: $faint-shadow
+        .input
+            input
+                padding: 15px
+        .buttons
+            @include flex-center
+            gap: 20px
+            margin-top: 10px
+            div
+                width: 100%
+        
+    

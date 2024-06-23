@@ -2,8 +2,12 @@ import BriefCase from '/briefcase.svg';
 import Home from '/home.svg';
 import { IoIosArrowDown } from "react-icons/io";
 import { customers, businesses, settings } from './Section';
+import { useLocation } from 'react-router-dom';
+
 
 const Sidebar = () => {
+    const location = useLocation();
+    const pathnames = ['/']
   return (
     <div className="sidebar-container">
         <div>
@@ -20,8 +24,8 @@ const Sidebar = () => {
                 <p className='side_headers'>CUSTOMERS</p>
                 <div className='customers'>
                     {
-                        customers?.map(({name,image})=>(
-                            <div className='organization' key={name}>
+                        customers?.map(({name,image,link})=>(
+                            <div className={`organization ${link === location?.pathname && 'active_link'}`} key={name}>
                                 <img src={image} alt='icon' />
                                 <span className='name'>{name}</span>
                             </div>

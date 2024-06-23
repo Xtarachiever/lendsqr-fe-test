@@ -8,16 +8,15 @@ import {
   import { useEffect, useState, Dispatch, SetStateAction } from 'react';
   import { BsFilter } from 'react-icons/bs';
   import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from 'react-icons/md';
-  
   interface BasicTableProps {
     data: object[];
     columns: any[];
     rowsPerPage?:number;
-    // setFilterPopUp:Dispatch<SetStateAction<boolean>>;
-    // filterPopUp: boolean;
+    setFilterPopUp:Dispatch<SetStateAction<boolean>>;
+    filterPopUp: boolean;
   }
   
-  export default function BasicTable({ data, columns, rowsPerPage = 5 }: BasicTableProps) {
+  export default function BasicTable({ data, columns, rowsPerPage = 10, setFilterPopUp, filterPopUp }: BasicTableProps) {
   
     const table = useReactTable({
       data,
@@ -27,6 +26,41 @@ import {
       // getSortedRowModel: getSortedRowModel(),
       getFilteredRowModel: getFilteredRowModel(),
     });
+
+    const filteredRows = table.getFilteredRowModel().rows;
+
+    const noOfPages =
+    filteredRows && Array.isArray(filteredRows)
+      ? Math.ceil(filteredRows.length / rowsPerPage)
+      : 0;
+
+    const maxPagesToShow = 10;
+    const pagesArr = [];
+
+    if (noOfPages <= maxPagesToShow) {
+      // If there are fewer or equal to 5 pages, display all pages
+      pagesArr.push(...new Array(noOfPages).fill(null).map((_, index) => index + 1));
+    } else {
+      // Calculate the middle index where the ellipsis should be placed
+      const middleIndex = Math.ceil(maxPagesToShow / 2);
+    
+      if (noOfPages <= 10) {
+        // If there are fewer or equal to 10 pages, display the first 5 pages, an ellipsis, and the last 5 pages
+        pagesArr.push(...new Array(maxPagesToShow).fill(null).map((_, index) => {
+          if (index < middleIndex) return index + 1;
+          if (index === middleIndex) return '...';
+          return noOfPages - (maxPagesToShow - index) + 1;
+        }));
+      } else {
+        // If there are more than 10 pages, display the first 2 pages, an ellipsis, the last 2 pages, and the current page
+        pagesArr.push(1, 2, '...', noOfPages - 1, noOfPages);
+      }
+    }
+    
+    
+    useEffect(()=>{
+      table.setPageSize(rowsPerPage);
+    },[rowsPerPage,table])
 
     return (
       <div className='table-div'>
@@ -48,8 +82,8 @@ import {
                               header.getContext()
                             )}
                           </div>
-                          <span onClick={()=>{}}>
-                            <BsFilter fontSize={'1.5rem'} id='filter'/>
+                          <span onClick={()=>setFilterPopUp(!filterPopUp)}>
+                            <BsFilter fontSize={'1.5rem'}/>
                           </span>
                         </div>
                       )
@@ -83,14 +117,25 @@ import {
                   table.setPageSize(Number(e.target.value))
                 }}
               >
+                {[10, 20, 30, 40, 50].map(pageSize => (
+                  <option key={pageSize} value={pageSize}>
+                    {pageSize}
+                  </option>
+                ))}
               </select>
             </div>
+            <p>out of {filteredRows.length}</p>
           </div>
           <div className='pageIndex'>
             <button className='prev' disabled={!table.getCanPreviousPage()}
               onClick={() => table.previousPage()}>
-              <MdKeyboardArrowLeft fontSize={'1.5rem'} />
+              <MdKeyboardArrowLeft fontSize={'1.5rem'}/>
             </button>
+            {
+              pagesArr.map((value,index)=>(
+                <button className='pagesArr' key={index} onClick={()=>table.setPageIndex(index)}>{value}</button>
+              ))
+            }
             <button className='next' disabled={!table.getCanNextPage()}
               onClick={() => table.nextPage()}>
               <MdKeyboardArrowRight fontSize={'1.5rem'}/>
