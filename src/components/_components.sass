@@ -1,0 +1,67 @@
+.detail_card
+    @include flex-center
+    @include flex-column-start
+    background: $white
+    box-shadow: $faint-shadow
+    max-width: 240px
+    padding: 20px 40px
+    height: 150px
+.table-div
+    background-color: white
+    border: 1px solid rgba($lightBlue, 0.06)
+    box-shadow: 0px 2px 20px rgba(black, 0.05)
+    overflow: scroll
+    padding: 15px
+    table
+        width: 100%
+        border-collapse: collapse
+        table-layout: fixed
+        min-width: 760px
+        border-spacing: 20px
+        th,td
+            word-wrap: break-word
+            overflow-wrap: break-word
+            white-space: normal  
+            padding: 10px
+        thead
+            text-align: left
+            tr
+                font-size: 11px
+                th
+                    &:last-child
+                        width: 40px
+                    cursor: pointer
+                    .header
+                        display: flex
+                        align-items: center
+                        span
+                            margin-left: 5px
+        tbody
+            text-align: left
+            z-index: 1
+            tr
+                &:not(:last-child)
+                    border-bottom: 2px solid rgba($color: $darkBlue, $alpha: 0.1)
+                td
+                    width: auto
+                    position: relative
+                    .popup-action
+                        position: relative
+                        cursor: pointer
+                        .popup
+                            background-color: white
+                            box-shadow: 0px 2px 20px rgba(black, 0.05)
+                            width: 200px
+                            padding: 10px 20px
+                            color: $darkBlue
+                            border-radius: 5px
+                            position: absolute
+                            right: -20px
+                            top: 20px
+                            z-index: 2
+                            p
+                                display: flex
+                                align-items: center
+                                padding-bottom: 10px
+                                svg
+                                    margin-right: 8px

@@ -1,0 +1,24 @@
+.inputField{
+    width: 100%;
+    position: relative;
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
+.inputField input{
+    background-color: white;
+    padding: 20px;
+    border: 2px solid rgba(84, 95, 125, 0.15);
+    width: 100%;
+    border-radius: 8px;
+    font-size: 14px;
+    outline: none;
+    color: black;
+    box-sizing: border-box;
+}
+.toggle_password{
+    color: #39CDCC;
+    position: absolute;
+    top: 25px;
+    right: 30px;
+    cursor: pointer;
+}

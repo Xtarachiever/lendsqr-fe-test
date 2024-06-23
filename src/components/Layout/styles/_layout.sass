@@ -1,0 +1,120 @@
+@import '../../../styles/_mixins'
+.layout_container
+    .main_content_container
+        margin-left: 320px
+        margin-top: 100px
+        @media screen and (max-width:800px)
+            margin-left: 100px
+    .navbar_container
+        @include flex-center
+        position: fixed
+        top: 0px
+        width: 100%
+        padding: 15px 25px
+        background: $white
+        box-shadow: $faint-shadow
+        z-index: 10
+        .search_input
+            width: 100%
+            max-width: 500px
+            position: relative
+            overflow: hidden
+            @media screen and (max-width: 1000px)
+                max-width: 350px
+            @media screen and (max-width: 640px)
+                max-width: 250px
+            @media screen and (max-width: 540px)
+                display: none
+            .input
+                padding: 0px
+                input
+                    padding: 15px
+            .icon
+                background: $lightBlue
+                color: white
+                width: 60px
+                position: absolute
+                top: 0px
+                right: 0px
+                height: 100%
+                border-top-right-radius: 5px
+                border-bottom-right-radius: 5px
+                cursor: pointer
+                svg
+                    font-size: 25px
+                    text-align: center
+                    margin: auto
+                    top: 50%
+                    transform: translate(-50%, -50%)
+                    left: 50%
+                    position: absolute
+        .user_profile
+            @include flex-center
+            min-width: 200px
+        .desktop
+            @media screen and (max-width: 800px)
+                display: none
+            span
+                text-decoration: underline
+            .user_profile_details
+                @include flex-center
+        .mobile
+            display: none
+            align-items: center
+            position: relative
+            display: none
+            .profile_arrow
+                margin-left: 5px
+            .mobile_user_profile
+                position: absolute
+                top: 40px
+                right: -5px
+                background: white
+                box-shadow: $faint-shadow
+                padding: 10px
+                width: 140px
+                span
+                    padding-bottom: 10px
+            @media screen and (max-width:800px)
+                display: flex
+    .sidebar-container
+        background: white
+        width: 300px
+        box-shadow: $faint-shadow
+        height: 100vh
+        margin-top: 80px
+        padding-top: 20px
+        padding-bottom: 100px
+        position: fixed
+        overflow: scroll
+        top: 0px
+        @media screen and (max-width:800px)
+            width: fit-content
+        .organization
+            display: flex
+            align-items: center
+            padding-bottom: 10px
+            padding-top: 10px
+            padding-left: 30px
+            cursor: pointer
+            @media screen and (max-width:800px)
+                padding-right: 30px
+                .name
+                    display: none
+                img
+                    width: 30px
+            &:hover
+                background: $faint-blue
+                border-left: 4px solid $lightBlue
+            span
+                padding-right: 10px
+                padding-left: 20px
+        .segments
+            .side_headers
+                font-size: $small-font
+                padding-top: 15px
+                padding-left: 30px
+                @media screen and (max-width:800px)
+                    display: none
+            .customers
+                padding-top: 5px

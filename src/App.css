@@ -1,42 +1,99 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
+.welcome-page{
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  min-height: 100vh;
+  align-items: center;
+  padding: 0px 20px;
 }
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
+.welcome-page .img{
+  margin-right: 30px;
+  /* min-width: 250px; */
+  max-width: 600px;
+  width: 100%;
+  min-height: inherit;
+  position: relative;
 }
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.welcome-page .img img{
+  width: 100%;
+  position: absolute;
+  transform: translateY(-50%);
+  top: 50%;
+}
+.welcome-page .form-div .form{
+  width: 100%;
+  padding: 30px;
+  min-width: 380px;
+  position: absolute;
+  transform: translateY(-50%);
+  top: 50%;
+  max-width: 80%;
+  right: 20px;
+}
+.welcome-page .form-div{
+  width: 100%;
+  min-height: inherit;
+  position: relative;
+}
+.welcome-page .form-div .form .welcome-title{
+  padding-bottom: 30px;
+}
+.welcome-page .form-div .form .welcome-title .welcome-text{
+  font-size: 32px;
+  color: #213F7D;
+  font-weight: 600;
+  padding-top: 5px;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
+.light-text{
+  font-weight: 400;
+}
+.blue-text{
+  color: #39CDCC;
+}
+
+.forgot-password{
+  font-size: 14px;
+  padding: 20px 0px 20px 0px;
+}
+@media screen and (max-width:1400px){
+  .welcome-page .form-div .form{
+    max-width: 90%;
   }
-  to {
-    transform: rotate(360deg);
+}
+@media screen and (max-width:760px){
+  .welcome-page{
+    flex-direction: column;
+    min-height: auto;
+    padding-top: 80px;
   }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
+  .welcome-page .img{
+    min-width: 200px;
+    display: flex;
+    align-items: flex-end;
+    width: 100%;
+    margin-right: 0px;
+    margin-top: 20px;
   }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
+  .welcome-page .img,
+  .welcome-page .form-div{
+    min-height: auto;
+  }
+  .welcome-page .form-div .form,
+  .welcome-page .img img{
+    position: relative;
+    transform: translate(0px);
+    top: 0px;
+  }
+  .welcome-page .form-div .form{
+    padding: 10px;
+    min-width: 100%;
+    right: 0px;
+  }
 }
