@@ -16,8 +16,6 @@ const FilterCard = ({ data, handleFilter, handleReset }: any) => {
   const {
     email,
     phoneNumber,
-    status,
-    organization,
     date,
     handleSubmit,
     handleValueChange,

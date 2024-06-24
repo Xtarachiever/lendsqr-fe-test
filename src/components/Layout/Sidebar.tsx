@@ -7,7 +7,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 const Sidebar = () => {
   const location = useLocation();
   const navigate = useNavigate();
-  const pathnames = ["/users"];
+
   return (
     <div className="sidebar-container">
       <div>
