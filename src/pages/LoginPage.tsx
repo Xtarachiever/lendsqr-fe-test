@@ -20,7 +20,7 @@ const LoginPage = () => {
             console.log('Email and password must be filled as required')
         }
         if(values){
-            navigate('/')
+            navigate('/users')
         }
       }catch(err){
 

@@ -4,18 +4,15 @@ import { Navigate, Route, Routes } from 'react-router-dom';
 import LoginPage from './pages/LoginPage';
 import HomePage from './pages/HomePage';
 import User from './pages/[user]';
-
 function App() {
   return (
-    <div>
-      <Routes>
-        <Route path='/login' element={<LoginPage />}/>
-        <Route path='/users' element={<HomePage />}/>
-        <Route path='/user/:user' element={<User />}/>
+    <Routes>
+      <Route path='/login' element={<LoginPage />}/>
+      <Route path='/users' element={<HomePage />}/>
+      <Route path='/user/:user' element={<User />}/>
 
-        <Route path='*' element={<Navigate to="/login" />}/>
-      </Routes>
-    </div>
+      <Route path='*' element={<Navigate to="/login" />}/>
+    </Routes>
   )
 }
 

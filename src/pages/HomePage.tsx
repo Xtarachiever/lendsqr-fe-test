@@ -34,7 +34,6 @@ interface DataItem {
   username:string;
   status:string[];
   createdAt:string;
-  // Add other fields if necessary
 }
 
 
