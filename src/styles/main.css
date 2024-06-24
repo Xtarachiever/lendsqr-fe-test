@@ -589,6 +589,12 @@
   padding: 30px;
 }
 
+.absolute {
+  position: absolute;
+  top: 50px;
+  left: 50px;
+}
+
 .button {
   border-radius: 5px;
   border: 1px solid transparent;

@@ -4,6 +4,7 @@ import Button from '../components/ReusableButtons/Button';
 import useLoginHook from '../hooks/LoginHook';
 import welcomeImg from '/welcome.svg';
 import {useNavigate} from 'react-router-dom';
+import Logo from '/logo.svg';
 
 type LoginProps = {
     email:string,
@@ -29,8 +30,11 @@ const LoginPage = () => {
   return (
     <div>
         <div className='welcome-page'>
+          <div className='absolute'>
+            <img src={Logo} alt='Logo'/>
+          </div>
             <div className='img'>
-            <img src={welcomeImg} alt='Welcome'/>
+              <img src={welcomeImg} alt='Welcome'/>
             </div>
             <div className='form-div'>
             <form className='form' onSubmit={handleSubmit(onSubmit)}>
