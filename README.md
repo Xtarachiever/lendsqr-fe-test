@@ -32,9 +32,10 @@ The user dashboard provides detailed information about user loans, personal data
 4. React testing library (Vitest)
 
 ## User Page View
-![User Dashboard](<img width="1403" alt="Screenshot 2024-06-24 at 19 40 12" src="https://github.com/Xtarachiever/lendsqr-fe/assets/63353240/d9ed7e85-c4f9-4641-b6fd-ee77dd87dd47">
-)
+![User Dashboard](https://asset.cloudinary.com/dzdboguzy/15fc179ff99e07d094be08ebd213c594)
 
+## Login Page View
+![Login Page](https://asset.cloudinary.com/dzdboguzy/8488a1874e702fae0eabec7aa7617525)
 
 ## Usage
 
