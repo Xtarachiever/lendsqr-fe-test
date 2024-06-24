@@ -7,7 +7,7 @@ The website serves as a straightforward user dashboard that presents a wide rang
 
 In the development phase, IndexedDB was employed for multiple purposes. Initially, it was used to store the details of logged-in users, enabling authentication for access to other routes. Additionally, IndexedDB was utilized for storing individual user information, offering a versatile solution for data management.
 
-The user dashboard provides detailed information about user loans, personal data, organizations, and statuses of lenders. The data used in this project was obtained from JSON Generator, simplifying the development process. Testing was carried out using react testing library (jest). The userdashboard and login components were tested.
+The user dashboard provides detailed information about user loans, personal data, organizations, and statuses of lenders. The data used in this project was obtained from JSON Generator, simplifying the development process. Vitest was used in testing which provided a testing approach that integrates vulnerability assessment with system or software integration testing, ensuring both security and functionality are rigorously evaluated. The userdashboard and login components were tested.
 
 ## Features
 
@@ -32,7 +32,7 @@ The user dashboard provides detailed information about user loans, personal data
 4. React testing library (Vitest)
 
 ## User Page View
-![User Dashboard](https://asset.cloudinary.com/dzdboguzy/15fc179ff99e07d094be08ebd213c594)
+![User Dashboard](https://res.cloudinary.com/dzdboguzy/image/upload/v1719256860/personal/Screenshot_2024-06-24_at_19.40.12_jgjqit.png)
 
 ## Login Page View
 ![Login Page](https://res.cloudinary.com/dzdboguzy/image/upload/v1719256861/personal/Screenshot_2024-06-24_at_20.15.40_bvmntr.png)
