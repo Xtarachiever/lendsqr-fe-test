@@ -102,6 +102,8 @@
 
 .user_details_container
     padding: 20px
+    @media screen and (max-width:420px)
+        padding: 0px
     .section
         display: flex
         flex-direction: column
@@ -118,9 +120,12 @@
             gap: 10px 40px
             flex-wrap: wrap
             padding: 5px 20px
+            word-break: break-word
             p
                 padding: 5px 0px
                 margin: 0px
+            .header
+                font-size: $small-font
                 
             
         

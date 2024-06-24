@@ -304,6 +304,11 @@
 .user_details_container {
   padding: 20px;
 }
+@media screen and (max-width: 420px) {
+  .user_details_container {
+    padding: 0px;
+  }
+}
 .user_details_container .section {
   display: flex;
   flex-direction: column;
@@ -325,11 +330,16 @@
   gap: 10px 40px;
   flex-wrap: wrap;
   padding: 5px 20px;
+  word-break: break-word;
 }
 .user_details_container .section p p,
 .user_details_container .section .details p {
   padding: 5px 0px;
   margin: 0px;
+}
+.user_details_container .section p .header,
+.user_details_container .section .details .header {
+  font-size: 12px;
 }
 
 .detail_card_collection {
@@ -383,6 +393,11 @@
 .user_page_wrapper {
   padding: 20px 40px;
 }
+@media screen and (max-width: 420px) {
+  .user_page_wrapper {
+    padding: 20px 10px;
+  }
+}
 .user_page_wrapper p {
   display: flex;
   align-items: center;
@@ -396,9 +411,21 @@
   justify-content: space-between;
   padding-bottom: 10px;
 }
+@media screen and (max-width: 650px) {
+  .user_page_wrapper .title {
+    flex-direction: column;
+    align-items: start;
+    padding-top: 10px;
+  }
+}
 .user_page_wrapper .title .action_buttons {
   display: flex;
   gap: 20px;
+}
+@media screen and (max-width: 650px) {
+  .user_page_wrapper .title .action_buttons {
+    margin-top: 10px;
+  }
 }
 .user_page_wrapper .title .action_buttons button {
   padding: 10px;
@@ -409,11 +436,23 @@
   border: 2px solid #39CDCC;
   color: #39CDCC;
 }
+@media screen and (max-width: 420px) {
+  .user_page_wrapper .title .action_buttons button {
+    padding: 5px;
+    font-size: 12px;
+  }
+}
 .user_page_wrapper .user_details_tab {
   background: white;
   padding: 40px;
   padding-bottom: 0px;
   box-shadow: rgba(33, 63, 125, 0.06) 0px 7px 29px 0px;
+  overflow: hidden;
+}
+@media screen and (max-width: 420px) {
+  .user_page_wrapper .user_details_tab {
+    padding: 20px 10px;
+  }
 }
 .user_page_wrapper .user_details_tab .section {
   display: flex;
@@ -422,12 +461,29 @@
   max-width: 700px;
   padding-bottom: 20px;
 }
+@media screen and (max-width: 1050px) {
+  .user_page_wrapper .user_details_tab .section {
+    flex-direction: column;
+    align-items: start;
+    gap: 5px;
+  }
+}
 .user_page_wrapper .user_details_tab .section .details {
   display: flex;
   align-items: center;
 }
+@media screen and (max-width: 420px) {
+  .user_page_wrapper .user_details_tab .section .details img {
+    width: 50px;
+  }
+}
 .user_page_wrapper .user_details_tab .section .details div {
   padding-left: 30px;
+}
+@media screen and (max-width: 1050px) {
+  .user_page_wrapper .user_details_tab .section .details div {
+    padding-left: 10px;
+  }
 }
 .user_page_wrapper .user_details_tab .section .tier {
   position: relative;
@@ -447,22 +503,49 @@
 .user_page_wrapper .user_details_tab .section .tier:before {
   right: -35px;
 }
-.user_page_wrapper .user_details_tab .tab_header {
+@media screen and (max-width: 1120px) {
+  .user_page_wrapper .user_details_tab .section .tier:after {
+    left: -15px;
+  }
+  .user_page_wrapper .user_details_tab .section .tier:before {
+    right: -15px;
+  }
+}
+@media screen and (max-width: 1050px) {
+  .user_page_wrapper .user_details_tab .section .tier:after, .user_page_wrapper .user_details_tab .section .tier:before {
+    display: none;
+  }
+}
+.user_page_wrapper .user_details_tab .tab_header_wrapper {
+  overflow: auto;
+}
+.user_page_wrapper .user_details_tab .tab_header_wrapper .tab_header {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  min-width: 600px;
   color: black;
 }
-.user_page_wrapper .user_details_tab .tab_header p {
+.user_page_wrapper .user_details_tab .tab_header_wrapper .tab_header p {
   padding-bottom: 10px;
   text-align: center;
   width: 180px;
   display: inline;
   cursor: pointer;
 }
-.user_page_wrapper .user_details_tab .tab_header .active_tab {
+.user_page_wrapper .user_details_tab .tab_header_wrapper .tab_header .active_tab {
   color: #39CDCC;
   border-bottom: 2px solid #39CDCC;
+}
+.user_page_wrapper .tab-content-wrapper {
+  background: #ffffff;
+  box-shadow: rgba(33, 63, 125, 0.06) 0px 7px 29px 0px;
+  margin-top: 40px;
+}
+@media screen and (max-width: 420px) {
+  .user_page_wrapper .tab-content-wrapper {
+    margin-top: 10px;
+  }
 }
 
 .small-font {
@@ -487,6 +570,10 @@
 
 .bold {
   font-weight: bold;
+}
+
+.cursor-pointer {
+  cursor: pointer;
 }
 
 .button {

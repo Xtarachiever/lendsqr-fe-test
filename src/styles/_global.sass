@@ -27,6 +27,8 @@
                 width: 100%
 .user_page_wrapper
     padding: 20px 40px
+    @media screen and (max-width:420px)
+        padding: 20px 10px
     p
         display: flex
         align-items: center
@@ -35,9 +37,15 @@
     .title
         @include flex-center 
         padding-bottom: 10px
+        @media screen and (max-width:650px)
+            flex-direction: column
+            align-items: start
+            padding-top: 10px
         .action_buttons
             display: flex
             gap: 20px
+            @media screen and (max-width:650px)
+                margin-top: 10px
             button
                 padding:10px
                 background: transparent
@@ -45,20 +53,35 @@
                 &:first-child
                     border: 2px solid $lightBlue
                     color: $lightBlue
+                @media screen and (max-width:420px)
+                    padding: 5px
+                    font-size: $small-font
     .user_details_tab
         background: white
         padding: 40px
         padding-bottom: 0px
         box-shadow: $faint-shadow
+        overflow: hidden
+        @media screen and (max-width:420px)
+            padding: 20px 10px
         .section
             @include flex-center
             max-width: 700px
             padding-bottom: 20px
+            @media screen and (max-width:1050px)
+                flex-direction: column
+                align-items: start
+                gap: 5px
             .details
                 display: flex
                 align-items: center
+                img
+                    @media screen and (max-width:420px)
+                        width: 50px
                 div
                     padding-left: 30px
+                    @media screen and (max-width:1050px)
+                        padding-left: 10px
             .tier
                 position: relative
                 &:after,
@@ -70,22 +93,40 @@
                     content: ""
                     position: absolute
                     top: -20px
-                    // transform: translate(-20%, 20px)
                 &:after
                     left: -35px
                 &:before
                     right: -35px
-        .tab_header
-            @include flex-center
-            color: black
-            p
-                padding-bottom: 10px
-                text-align: center
-                width: 180px
-                display: inline
-                cursor: pointer
-            .active_tab
-                color: $lightBlue
-                border-bottom: 2px solid $lightBlue
+                @media screen and (max-width:1120px)
+                    &:after
+                        left: -15px
+                    &:before
+                        right: -15px
+                @media screen and (max-width:1050px)
+                    &:after,
+                    &:before
+                        display: none
+        .tab_header_wrapper
+            overflow: auto
+            .tab_header
+                @include flex-center
+                min-width: 600px
+                color: black
+                p
+                    padding-bottom: 10px
+                    text-align: center
+                    width: 180px
+                    display: inline
+                    cursor: pointer
+                .active_tab
+                    color: $lightBlue
+                    border-bottom: 2px solid $lightBlue
+    .tab-content-wrapper
+        background: $white
+        box-shadow: $faint-shadow
+        margin-top: 40px
+        @media screen and (max-width:420px)
+            margin-top: 10px
+
 
     

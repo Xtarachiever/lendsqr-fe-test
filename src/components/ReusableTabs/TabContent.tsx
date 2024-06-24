@@ -1,22 +1,12 @@
-import { tabs } from "./TabDetails"
-import { useEffect, useState } from "react"
-import { retrieveUserDetailsFromIndexedDB } from "../../store/IndexedDB"
+import { tabs } from "./TabDetails";
+import { UserDetailsProps } from "../UserDetails/UserDetails";
+
 type TabProps={
     activeTab:number,
-    params:string
+    retrieveUserDetails: UserDetailsProps['retrieveUserDetails'];
 }
-const TabContent = ({ activeTab, params }:TabProps) => {
-    const [retrieveUserDetails, setRetrieveUserDetails] = useState<any>([])
+const TabContent = ({ activeTab, retrieveUserDetails }:TabProps) => {
 
-    useEffect(()=>{
-        retrieveUserDetailsFromIndexedDB(params)
-        .then((storedData) => {
-          setRetrieveUserDetails(storedData);
-        })
-        .catch((error) => {
-          console.error('Error retrieving user details:', error);
-        });
-    },[params])
 
     const renderActiveTabContent = () => {
         const activeTabData = tabs.find(tab => tab?.id === activeTab);

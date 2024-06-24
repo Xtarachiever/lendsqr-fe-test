@@ -1,6 +1,6 @@
 
 
-type UserDetailsProps={
+export type UserDetailsProps={
     retrieveUserDetails:{
         profile:{
             name:string,
@@ -18,31 +18,31 @@ const UserDetails = ({retrieveUserDetails}:UserDetailsProps) => {
             <p>Personal Information</p>
             <div className='details'>
                 <div>
-                    <p>FULL NAME</p>
+                    <p className="mid-font">FULL NAME</p>
                     <p>{retrieveUserDetails?.profile?.name}</p>
                 </div>
                 <div>
-                    <p>PHONE NUMBER</p>
+                    <p className="mid-font">PHONE NUMBER</p>
                     <p>{retrieveUserDetails?.profile?.phone}</p>
                 </div>
                 <div>
-                    <p>EMAIL ADDRESS</p>
+                    <p className="mid-font">EMAIL ADDRESS</p>
                     <p>{retrieveUserDetails?.email}</p>
                 </div>
                 <div>
-                    <p>BVN</p>
+                    <p className="mid-font">BVN</p>
                     <p>{retrieveUserDetails?.profile?.phone}</p>
                 </div>
-                <div>
-                    <p>GENDER</p>
+                <div >
+                    <p className="mid-font">GENDER</p>
                     <p>FEMALE</p>
                 </div>
                 <div>
-                    <p>CHILDREN</p>
+                    <p className="mid-font">CHILDREN</p>
                     <p>None</p>
                 </div>
                 <div>
-                    <p>TYPE OF RESIDENCE</p>
+                    <p className="mid-font">TYPE OF RESIDENCE</p>
                     <p>Parent's Apartment</p>
                 </div>
             </div>
@@ -51,27 +51,27 @@ const UserDetails = ({retrieveUserDetails}:UserDetailsProps) => {
           <p>Education and Employment</p>
           <div className='details'>
                 <div>
-                    <p>LEVEL OF EDUCATION</p>
+                    <p className="mid-font">LEVEL OF EDUCATION</p>
                     <p>{retrieveUserDetails?.profile?.name}</p>
                 </div>
                 <div>
-                    <p>EMPLOYMENT STATUS</p>
+                    <p className="mid-font">EMPLOYMENT STATUS</p>
                     <p>{retrieveUserDetails?.status?.[0]}</p>
                 </div>
                 <div>
-                    <p>SECTOR OF EMPLOYMENT</p>
+                    <p className="mid-font">SECTOR OF EMPLOYMENT</p>
                     <p>{retrieveUserDetails?.email}</p>
                 </div>
                 <div>
-                    <p>DURATION OF EMPLOYMENT</p>
+                    <p className="mid-font">DURATION OF EMPLOYMENT</p>
                     <p>5 Years</p>
                 </div>
                 <div>
-                    <p>MONTHLY INCOME</p>
+                    <p className="mid-font">MONTHLY INCOME</p>
                     <p>None</p>
                 </div>
                 <div>
-                    <p>LOAN REPAYMENT</p>
+                    <p className="mid-font">LOAN REPAYMENT</p>
                     <p>40,000</p>
                 </div>
           </div>
@@ -80,19 +80,19 @@ const UserDetails = ({retrieveUserDetails}:UserDetailsProps) => {
           <p>Socials</p>
           <div className='details'>
             <div>
-                <p>TWITTER</p>
+                <p className="mid-font">TWITTER</p>
                 <p>@ {retrieveUserDetails?.profile?.name}</p>
             </div>
             <div>
-                <p>PHONE NUMBER</p>
+                <p className="mid-font">PHONE NUMBER</p>
                 <p>{retrieveUserDetails?.profile?.phone}</p>
             </div>
             <div>
-                <p>EMAIL</p>
+                <p className="mid-font">EMAIL</p>
                 <p>{retrieveUserDetails?.email}</p>
             </div>
             <div>
-                <p>RELATIONSHIP</p>
+                <p className="mid-font">RELATIONSHIP</p>
                 <p>Sister</p>
             </div>
           </div>
@@ -101,19 +101,19 @@ const UserDetails = ({retrieveUserDetails}:UserDetailsProps) => {
           <p>Guarantor</p>
           <div className='details'>
             <div>
-                <p>TWITTER</p>
+                <p className="mid-font">TWITTER</p>
                 <p>@ {retrieveUserDetails?.profile?.name}</p>
             </div>
             <div>
-                <p>PHONE NUMBER</p>
+                <p className="mid-font">PHONE NUMBER</p>
                 <p>{retrieveUserDetails?.profile?.phone}</p>
             </div>
             <div>
-                <p>EMAIL</p>
+                <p className="mid-font">EMAIL</p>
                 <p>{retrieveUserDetails?.email}</p>
             </div>
             <div>
-                <p>RELATIONSHIP</p>
+                <p className="mid-font">RELATIONSHIP</p>
                 <p>Sister</p>
             </div>
           </div>
@@ -121,19 +121,19 @@ const UserDetails = ({retrieveUserDetails}:UserDetailsProps) => {
         <div className='section section-5'>
           <div className='details'>
             <div>
-                <p>TWITTER</p>
+                <p className="mid-font">TWITTER</p>
                 <p>@ {retrieveUserDetails?.profile?.name}</p>
             </div>
             <div>
-                <p>PHONE NUMBER</p>
+                <p className="mid-font">PHONE NUMBER</p>
                 <p>{retrieveUserDetails?.profile?.phone}</p>
             </div>
             <div>
-                <p>EMAIL</p>
+                <p className="mid-font">EMAIL</p>
                 <p>{retrieveUserDetails?.email}</p>
             </div>
             <div>
-                <p>RELATIONSHIP</p>
+                <p className="mid-font">RELATIONSHIP</p>
                 <p>Sister</p>
             </div>
           </div>
