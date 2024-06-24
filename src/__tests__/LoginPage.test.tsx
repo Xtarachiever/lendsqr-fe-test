@@ -73,7 +73,7 @@ describe("Display error messages when the inputs are empty", () => {
 
     // Initially, ensure error message is not in the document
     expect(
-      screen.queryByText(/password must be exactly 8 characters/i)
+      screen.queryByText(/Password must be at least 3 characters/i)
     ).toBeNull();
 
     // Click the button
@@ -83,7 +83,7 @@ describe("Display error messages when the inputs are empty", () => {
     await waitFor(() => {
       expect(passwordField.value).toBe("");
       expect(
-        screen.getByText(/password must be exactly 8 characters/i)
+        screen.getByText(/Password must be at least 3 characters/i)
       ).toBeInTheDocument();
     });
   });
