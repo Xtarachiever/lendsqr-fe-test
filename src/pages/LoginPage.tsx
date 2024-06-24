@@ -35,8 +35,8 @@ const LoginPage = () => {
             <div className='form-div'>
             <form className='form' onSubmit={handleSubmit(onSubmit)}>
                 <div className='welcome-title'>
-                <p className='welcome-text'>Welcome!</p>
-                <p className='light-text'>Enter details to Login.</p>
+                  <p className='welcome-text'>Welcome!</p>
+                  <p className='light-text'>Enter details to Login.</p>
                 </div>
                 <Input placeholder='Email' value={email} onChange={(e)=>{handleValueChange('email',e.target.value)}}/>
                 {errors?.email && <p className='error_messages'>{errors?.email?.message}</p>} <br />
