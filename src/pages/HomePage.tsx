@@ -73,6 +73,7 @@ const HomePage = () => {
         setData(data)
       })
     }catch(e){
+      setLoading(false)
       console.log(e)
     }
   }
@@ -200,16 +201,22 @@ const HomePage = () => {
           {
             loading ? <p>Loading...</p>
             :
-            <div className="table_wrapper">
-              <BasicTable data={data} columns={columns} filterPopUp={filterPopUp} setFilterPopUp={setFilterPopUp} />
-              {
-                filterPopUp ?
-                <div className="filter_wrapper">
-                  <FilterCard data={data} handleFilter={handleFilter} handleReset={handleReset}/>
-                </div>
-                : <></>
-              }
-            </div>
+            (
+              data?.length === 0
+              ?
+              <p className="no-data-padding">No Data Found</p>
+              :
+              <div className="table_wrapper">
+                <BasicTable data={data} columns={columns} filterPopUp={filterPopUp} setFilterPopUp={setFilterPopUp} />
+                {
+                  filterPopUp ?
+                  <div className="filter_wrapper">
+                    <FilterCard data={data} handleFilter={handleFilter} handleReset={handleReset}/>
+                  </div>
+                  : <></>
+                }
+              </div>
+            )
           }
          </div>
       </Layout>

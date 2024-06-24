@@ -491,7 +491,7 @@
 .user_page_wrapper .user_details_tab .section .tier:after, .user_page_wrapper .user_details_tab .section .tier:before {
   width: 2px;
   height: 80px;
-  background-color: rgba(33, 63, 125, 0.8);
+  background-color: rgba(33, 63, 125, 0.2);
   display: block;
   content: "";
   position: absolute;
@@ -515,6 +515,9 @@
   .user_page_wrapper .user_details_tab .section .tier:after, .user_page_wrapper .user_details_tab .section .tier:before {
     display: none;
   }
+}
+.user_page_wrapper .user_details_tab .section .tier .rating svg {
+  color: #E9B200;
 }
 .user_page_wrapper .user_details_tab .tab_header_wrapper {
   overflow: auto;
@@ -574,6 +577,10 @@
 
 .cursor-pointer {
   cursor: pointer;
+}
+
+.no-data-padding {
+  padding: 30px;
 }
 
 .button {

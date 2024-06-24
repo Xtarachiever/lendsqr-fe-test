@@ -8,6 +8,7 @@ import {
   import { useEffect, useState, Dispatch, SetStateAction } from 'react';
   import { BsFilter } from 'react-icons/bs';
   import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from 'react-icons/md';
+import splitNumberCumulatively, { SplitNumberProps } from '../../utilities/Function';
   interface BasicTableProps {
     data: object[];
     columns: any[];
@@ -16,7 +17,7 @@ import {
     filterPopUp: boolean;
   }
   
-  export default function BasicTable({ data, columns, rowsPerPage = 10, setFilterPopUp, filterPopUp }: BasicTableProps) {
+  export default function BasicTable({ data, columns, rowsPerPage = 20, setFilterPopUp, filterPopUp }: BasicTableProps) {
   
     const table = useReactTable({
       data,
@@ -61,6 +62,9 @@ import {
     useEffect(()=>{
       table.setPageSize(rowsPerPage);
     },[rowsPerPage,table])
+
+    const splitProps: SplitNumberProps = { number: 500, partSize: 20 };
+    const partsArray = splitNumberCumulatively(splitProps);
 
     return (
       <div className='table-div'>
@@ -117,7 +121,7 @@ import {
                   table.setPageSize(Number(e.target.value))
                 }}
               >
-                {[10, 20, 30, 40, 50].map(pageSize => (
+                {partsArray?.map(pageSize => (
                   <option key={pageSize} value={pageSize}>
                     {pageSize}
                   </option>
