@@ -34,6 +34,8 @@ The user dashboard provides detailed information about user loans, personal data
 ## User Page View
 ![User Dashboard](https://asset.cloudinary.com/dzdboguzy/15fc179ff99e07d094be08ebd213c594)
 
+<img src="https://asset.cloudinary.com/dzdboguzy/15fc179ff99e07d094be08ebd213c594" alt="My cool logo"/>
+
 ## Login Page View
 ![Login Page](https://asset.cloudinary.com/dzdboguzy/8488a1874e702fae0eabec7aa7617525)
 
