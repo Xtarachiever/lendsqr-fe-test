@@ -123,6 +123,7 @@
   position: fixed;
   overflow: scroll;
   top: 0px;
+  min-height: 100%;
 }
 @media screen and (max-width: 800px) {
   .layout_container .sidebar-container {
@@ -267,6 +268,11 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+@media screen and (max-width: 650px) {
+  .table-div .pagination {
+    flex-direction: column;
+  }
 }
 .table-div .pagination .pageIndex {
   display: flex;
