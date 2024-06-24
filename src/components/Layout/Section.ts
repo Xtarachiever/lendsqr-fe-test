@@ -2,7 +2,7 @@ export const customers = [
     {
         "name":"Users",
         "image":"/user-friends.svg",
-        "link":"/"
+        "link":"/users"
     },
     {
         "name":"Guarantors",

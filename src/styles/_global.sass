@@ -25,5 +25,67 @@
             margin-top: 10px
             div
                 width: 100%
-        
+.user_page_wrapper
+    padding: 20px 40px
+    p
+        display: flex
+        align-items: center
+        span
+            padding-left: 14px
+    .title
+        @include flex-center 
+        padding-bottom: 10px
+        .action_buttons
+            display: flex
+            gap: 20px
+            button
+                padding:10px
+                background: transparent
+                font-size: 14px
+                &:first-child
+                    border: 2px solid $lightBlue
+                    color: $lightBlue
+    .user_details_tab
+        background: white
+        padding: 40px
+        padding-bottom: 0px
+        box-shadow: $faint-shadow
+        .section
+            @include flex-center
+            max-width: 700px
+            padding-bottom: 20px
+            .details
+                display: flex
+                align-items: center
+                div
+                    padding-left: 30px
+            .tier
+                position: relative
+                &:after,
+                &:before
+                    width: 2px
+                    height: 80px
+                    background-color: rgba($darkBlue,0.8)
+                    display: block
+                    content: ""
+                    position: absolute
+                    top: -20px
+                    // transform: translate(-20%, 20px)
+                &:after
+                    left: -35px
+                &:before
+                    right: -35px
+        .tab_header
+            @include flex-center
+            color: black
+            p
+                padding-bottom: 10px
+                text-align: center
+                width: 180px
+                display: inline
+                cursor: pointer
+            .active_tab
+                color: $lightBlue
+                border-bottom: 2px solid $lightBlue
+
     

@@ -11,6 +11,8 @@ import { FiUserX } from "react-icons/fi";
 import { RiUserFollowLine } from "react-icons/ri";
 import { BsEye } from "react-icons/bs";
 import FilterCard from "../components/ReusableCards/FilterCard";
+import { useNavigate } from "react-router-dom";
+import { storeUserDetailsInIndexedDB } from "../store/IndexedDB";
 
 type formProps ={
   organization:string
@@ -37,10 +39,13 @@ interface DataItem {
 
 
 const HomePage = () => {
+  // Navigation
+  const navigate = useNavigate();
+
   const [data, setData] = useState<DataItem[]>([])
+
   const [filterPopUp, setFilterPopUp] = useState<boolean>(false);
   const [activeDiv, setActiveDiv] = useState<{ [key: string]: boolean } | null>(null)
-
   const [loading, setLoading] = useState<boolean>(false);
 
   // Filter out the Active users
@@ -112,6 +117,12 @@ const HomePage = () => {
     hour12: true,
   };
 
+  const handleViewDetails = (row:any) =>{
+    const activeUserData = data?.filter((item)=>item?.username === row);
+    navigate(`/user/${row}`);
+    storeUserDetailsInIndexedDB(activeUserData?.[0])
+  }
+
   const columns:object[] = [
     {
       header:'ORGANIZATION',
@@ -157,7 +168,7 @@ const HomePage = () => {
             {
               activeDiv?.[row?.id] ?
               <div className='popup'>
-                <p><BsEye fontSize={'1.0rem'} /> View Details</p>
+                <p onClick={()=>handleViewDetails(row?.original?.username)}><BsEye fontSize={'1.0rem'} /> View Details</p>
                 <p><FiUserX /> Blacklist User</p>
                 <p><RiUserFollowLine /> Activate User</p>
               </div>

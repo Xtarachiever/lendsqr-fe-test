@@ -301,6 +301,37 @@
   padding-top: 5px;
 }
 
+.user_details_container {
+  padding: 20px;
+}
+.user_details_container .section {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+.user_details_container .section:not(:last-child) {
+  border-bottom: 2px solid rgba(33, 63, 125, 0.2);
+}
+.user_details_container .section p {
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+.user_details_container .section p,
+.user_details_container .section .details {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  justify-content: start;
+  gap: 10px 40px;
+  flex-wrap: wrap;
+  padding: 5px 20px;
+}
+.user_details_container .section p p,
+.user_details_container .section .details p {
+  padding: 5px 0px;
+  margin: 0px;
+}
+
 .detail_card_collection {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -347,6 +378,91 @@
 }
 .table_wrapper .filter_wrapper .buttons div {
   width: 100%;
+}
+
+.user_page_wrapper {
+  padding: 20px 40px;
+}
+.user_page_wrapper p {
+  display: flex;
+  align-items: center;
+}
+.user_page_wrapper p span {
+  padding-left: 14px;
+}
+.user_page_wrapper .title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 10px;
+}
+.user_page_wrapper .title .action_buttons {
+  display: flex;
+  gap: 20px;
+}
+.user_page_wrapper .title .action_buttons button {
+  padding: 10px;
+  background: transparent;
+  font-size: 14px;
+}
+.user_page_wrapper .title .action_buttons button:first-child {
+  border: 2px solid #39CDCC;
+  color: #39CDCC;
+}
+.user_page_wrapper .user_details_tab {
+  background: white;
+  padding: 40px;
+  padding-bottom: 0px;
+  box-shadow: rgba(33, 63, 125, 0.06) 0px 7px 29px 0px;
+}
+.user_page_wrapper .user_details_tab .section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 700px;
+  padding-bottom: 20px;
+}
+.user_page_wrapper .user_details_tab .section .details {
+  display: flex;
+  align-items: center;
+}
+.user_page_wrapper .user_details_tab .section .details div {
+  padding-left: 30px;
+}
+.user_page_wrapper .user_details_tab .section .tier {
+  position: relative;
+}
+.user_page_wrapper .user_details_tab .section .tier:after, .user_page_wrapper .user_details_tab .section .tier:before {
+  width: 2px;
+  height: 80px;
+  background-color: rgba(33, 63, 125, 0.8);
+  display: block;
+  content: "";
+  position: absolute;
+  top: -20px;
+}
+.user_page_wrapper .user_details_tab .section .tier:after {
+  left: -35px;
+}
+.user_page_wrapper .user_details_tab .section .tier:before {
+  right: -35px;
+}
+.user_page_wrapper .user_details_tab .tab_header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: black;
+}
+.user_page_wrapper .user_details_tab .tab_header p {
+  padding-bottom: 10px;
+  text-align: center;
+  width: 180px;
+  display: inline;
+  cursor: pointer;
+}
+.user_page_wrapper .user_details_tab .tab_header .active_tab {
+  color: #39CDCC;
+  border-bottom: 2px solid #39CDCC;
 }
 
 .small-font {

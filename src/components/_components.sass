@@ -100,6 +100,27 @@
                 padding-bottom: 5px
                 padding-top: 5px
 
+.user_details_container
+    padding: 20px
+    .section
+        display: flex
+        flex-direction: column
+        padding: 20px
+        &:not(:last-child)
+            border-bottom: 2px solid rgba($color: $darkBlue, $alpha: 0.20)
+        p
+            margin-bottom: 10px
+            margin-top: 10px
+        p,
+        .details
+            @include flex-center
+            justify-content: start
+            gap: 10px 40px
+            flex-wrap: wrap
+            padding: 5px 20px
+            p
+                padding: 5px 0px
+                margin: 0px
                 
             
         
