@@ -198,7 +198,7 @@ const HomePage = () => {
               </div>
           </div>
           {
-            loading ? <p>Loading...</p>
+            loading ? <div className="loader"></div>
             :
             (
               data?.length === 0

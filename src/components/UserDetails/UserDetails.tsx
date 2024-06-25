@@ -15,7 +15,7 @@ const UserDetails = ({retrieveUserDetails}:UserDetailsProps) => {
   return (
     <div className="user_details_container">
         <div className="section">
-            <p>Personal Information</p>
+            <p className="section_header">Personal Information</p>
             <div className='details'>
                 <div>
                     <p className="mid-font">FULL NAME</p>
@@ -47,8 +47,8 @@ const UserDetails = ({retrieveUserDetails}:UserDetailsProps) => {
                 </div>
             </div>
         </div>
-        <div className='section section-2'>
-          <p>Education and Employment</p>
+        <div className='section'>
+          <p className="section_header">Education and Employment</p>
           <div className='details'>
                 <div>
                     <p className="mid-font">LEVEL OF EDUCATION</p>
@@ -76,8 +76,8 @@ const UserDetails = ({retrieveUserDetails}:UserDetailsProps) => {
                 </div>
           </div>
         </div>
-        <div className='section section-3'>
-          <p>Socials</p>
+        <div className='section'>
+          <p className="section_header">Socials</p>
           <div className='details'>
             <div>
                 <p className="mid-font">TWITTER</p>
@@ -97,8 +97,8 @@ const UserDetails = ({retrieveUserDetails}:UserDetailsProps) => {
             </div>
           </div>
         </div>
-        <div className='section section-4'>
-          <p>Guarantor</p>
+        <div className='section'>
+          <p className="section_header">Guarantor</p>
           <div className='details'>
             <div>
                 <p className="mid-font">TWITTER</p>

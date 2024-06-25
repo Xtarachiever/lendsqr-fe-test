@@ -51,13 +51,17 @@
         .user_profile
             @include flex-center
             min-width: 200px
+            svg
+                cursor: pointer
         .desktop
             @media screen and (max-width: 800px)
                 display: none
             span
                 text-decoration: underline
+                cursor: pointer
             .user_profile_details
                 @include flex-center
+                cursor: pointer
         .mobile
             display: none
             align-items: center
@@ -75,6 +79,7 @@
                 width: 140px
                 span
                     padding-bottom: 10px
+                    cursor: pointer
             @media screen and (max-width:800px)
                 display: flex
     .sidebar-container

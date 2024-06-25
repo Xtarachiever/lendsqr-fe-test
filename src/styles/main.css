@@ -73,6 +73,9 @@
   justify-content: space-between;
   min-width: 200px;
 }
+.layout_container .navbar_container .user_profile svg {
+  cursor: pointer;
+}
 @media screen and (max-width: 800px) {
   .layout_container .navbar_container .desktop {
     display: none;
@@ -80,11 +83,13 @@
 }
 .layout_container .navbar_container .desktop span {
   text-decoration: underline;
+  cursor: pointer;
 }
 .layout_container .navbar_container .desktop .user_profile_details {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  cursor: pointer;
 }
 .layout_container .navbar_container .mobile {
   display: none;
@@ -106,6 +111,7 @@
 }
 .layout_container .navbar_container .mobile .mobile_user_profile span {
   padding-bottom: 10px;
+  cursor: pointer;
 }
 @media screen and (max-width: 800px) {
   .layout_container .navbar_container .mobile {
@@ -307,14 +313,6 @@
   padding-top: 5px;
 }
 
-.user_details_container {
-  padding: 20px;
-}
-@media screen and (max-width: 420px) {
-  .user_details_container {
-    padding: 0px;
-  }
-}
 .user_details_container .section {
   display: flex;
   flex-direction: column;
@@ -322,6 +320,10 @@
 }
 .user_details_container .section:not(:last-child) {
   border-bottom: 2px solid rgba(33, 63, 125, 0.2);
+}
+.user_details_container .section .section_header {
+  color: #213F7D;
+  font-weight: 500;
 }
 .user_details_container .section p {
   margin-bottom: 10px;
@@ -337,6 +339,7 @@
   flex-wrap: wrap;
   padding: 5px 20px;
   word-break: break-word;
+  color: #545F7D;
 }
 .user_details_container .section p p,
 .user_details_container .section .details p {
@@ -415,7 +418,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding-bottom: 10px;
+  padding: 30px 0px;
 }
 @media screen and (max-width: 650px) {
   .user_page_wrapper .title {
@@ -495,7 +498,7 @@
   position: relative;
 }
 .user_page_wrapper .user_details_tab .section .tier:after, .user_page_wrapper .user_details_tab .section .tier:before {
-  width: 2px;
+  width: 1px;
   height: 80px;
   background-color: rgba(33, 63, 125, 0.2);
   display: block;
@@ -607,6 +610,10 @@
   transition: border-color 0.25s;
   width: 100%;
 }
+.button:hover {
+  scale: 1.03;
+  transition: all 0.3s ease-in-out;
+}
 
 .smaller_button {
   padding: 0.8em 1em;
@@ -614,8 +621,8 @@
 
 .status_button {
   border: none;
-  border-radius: 15px;
-  padding: 10px;
+  border-radius: 20px;
+  padding: 7px 20px;
 }
 
 .active {

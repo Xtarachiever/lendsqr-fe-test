@@ -103,15 +103,15 @@
                 padding-top: 5px
 
 .user_details_container
-    padding: 20px
-    @media screen and (max-width:420px)
-        padding: 0px
     .section
         display: flex
         flex-direction: column
         padding: 20px
         &:not(:last-child)
             border-bottom: 2px solid rgba($color: $darkBlue, $alpha: 0.20)
+        .section_header
+            color: $navyBlue
+            font-weight:500 
         p
             margin-bottom: 10px
             margin-top: 10px
@@ -123,6 +123,7 @@
             flex-wrap: wrap
             padding: 5px 20px
             word-break: break-word
+            color: $dullBlue
             p
                 padding: 5px 0px
                 margin: 0px
