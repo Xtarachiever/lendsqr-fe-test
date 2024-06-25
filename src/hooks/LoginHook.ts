@@ -8,7 +8,7 @@ type useForm = {
     password:string,
 }
 const useLoginHook = () =>{
-    const { watch, handleSubmit, formState, setValue }
+    const { watch, handleSubmit, formState, register }
     = useForm<useForm>({
         resolver: yupResolver(loginValidator),
         mode: "all",
@@ -18,17 +18,13 @@ const useLoginHook = () =>{
         },
     });
 
-    const handleValueChange = (field:'email' | 'password', value:string) =>{
-        setValue(field, value)
-    }
-
     const {email, password} = watch()
     return{
-        handleValueChange,
         email,
         password,
         handleSubmit,
-        errors: formState?.errors
+        errors: formState?.errors,
+        register
     }
 }
 
