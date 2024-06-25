@@ -9,6 +9,8 @@ import {
   import { BsFilter } from 'react-icons/bs';
   import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from 'react-icons/md';
 import splitNumberCumulatively, { SplitNumberProps } from '../../utilities/Function';
+// import Pagination from '../Pagination/Pagination';
+
   interface BasicTableProps {
     data: object[];
     columns: any[];
@@ -35,6 +37,7 @@ import splitNumberCumulatively, { SplitNumberProps } from '../../utilities/Funct
       ? Math.ceil(filteredRows.length / rowsPerPage)
       : 0;
 
+      // Can be passed as props at anytime
     const maxPagesToShow = 10;
     const pagesArr = [];
 
@@ -42,7 +45,6 @@ import splitNumberCumulatively, { SplitNumberProps } from '../../utilities/Funct
       // If there are fewer or equal to 5 pages, display all pages
       pagesArr.push(...new Array(noOfPages).fill(null).map((_, index) => index + 1));
     } else {
-      // Calculate the middle index where the ellipsis should be placed
       const middleIndex = Math.ceil(maxPagesToShow / 2);
     
       if (noOfPages <= 10) {
