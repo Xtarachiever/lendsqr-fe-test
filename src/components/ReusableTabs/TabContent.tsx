@@ -14,7 +14,7 @@ const TabContent = ({ activeTab, retrieveUserDetails }:TabProps) => {
           const ActiveComponent = activeTabData.component;
           return <ActiveComponent retrieveUserDetails={retrieveUserDetails} />;
         }
-        return null;
+        return <div>{activeTabData?.tabHeader} Page</div>;
     };
 
   return (

@@ -13,6 +13,7 @@ import { BsEye } from "react-icons/bs";
 import FilterCard from "../components/ReusableCards/FilterCard";
 import { useNavigate } from "react-router-dom";
 import { storeUserDetailsInIndexedDB } from "../store/IndexedDB";
+import Button from "../components/ReusableButtons/Button";
 
 type formProps ={
   organization:string
@@ -42,6 +43,7 @@ const HomePage = () => {
   const navigate = useNavigate();
 
   const [data, setData] = useState<DataItem[]>([])
+  const [filteredData, setFilteredData] = useState<DataItem[]>([...data]);
 
   const [filterPopUp, setFilterPopUp] = useState<boolean>(false);
   const [activeDiv, setActiveDiv] = useState<{ [key: string]: boolean } | null>(null)
@@ -70,6 +72,7 @@ const HomePage = () => {
       .then(data=>{
         setLoading(false)
         setData(data)
+        setFilteredData(data)
       })
     }catch(e){
       setLoading(false)
@@ -77,28 +80,28 @@ const HomePage = () => {
     }
   }
 
-  let filteredData = [...data] as DataItem[];
 
   const handleFilter = (values:formProps) =>{
+    let updatedData = [...data];
     if(values?.organization !== ''){
-        filteredData = data?.filter((item: { profile: { organization: string[]} }) => item?.profile?.organization[0] === values?.organization)
+        updatedData = updatedData?.filter((item: { profile: { organization: string[]} }) => item?.profile?.organization[0] === values?.organization)
     }
     if(values?.phoneNumber !== ''){
-        filteredData = data?.filter((item: { profile: { phone: string } } )=> item?.profile?.phone === values?.phoneNumber);
+        updatedData = updatedData?.filter((item: { profile: { phone: string } } )=> item?.profile?.phone === values?.phoneNumber);
     }
     if(values?.username !== ''){
-      filteredData = data?.filter((item: { username: string } )=> item?.username === values?.username);
+      updatedData = updatedData?.filter((item: { username: string } )=> item?.username === values?.username);
     }
     if(values?.email !== ''){
-      filteredData = data?.filter((item: { email: string } )=> item?.email === values?.email);
+      updatedData = updatedData?.filter((item: { email: string } )=> item?.email === values?.email);
     }
     if(values?.status !== ''){
-      filteredData = data?.filter((item: { status: string[] } )=> item?.status[0] === values?.status);
+      updatedData = updatedData?.filter((item: { status: string[] } )=> item?.status[0] === values?.status);
     }
     if(values?.date !== ''){
-      filteredData = data?.filter((item: { createdAt: string } )=> item?.createdAt.slice(0, 10) === values?.date);
+      updatedData = updatedData?.filter((item: { createdAt: string } )=> item?.createdAt.slice(0, 10) === values?.date);
     }
-    setData(filteredData)
+    setFilteredData(updatedData)
     setFilterPopUp(false)
   }
 
@@ -205,8 +208,20 @@ const HomePage = () => {
               ?
               <p className="no-data-padding">No Data Found</p>
               :
+              filteredData?.length === 0
+              ? 
+              <div className="no_data_based_filter">
+                No data found on your search. 
+                <Button
+                  name="Reset"
+                  type="button"
+                  onClick={() => fetchData()}
+                  style={{ padding: "10px", width: "100%" }}
+                />
+                </div>
+              :
               <div className="table_wrapper">
-                <BasicTable data={data} columns={columns} filterPopUp={filterPopUp} setFilterPopUp={setFilterPopUp} />
+                <BasicTable data={filteredData} columns={columns} filterPopUp={filterPopUp} setFilterPopUp={setFilterPopUp} />
                 {
                   filterPopUp ?
                   <div className="filter_wrapper">

@@ -79,7 +79,7 @@ const User = () => {
                   {tabs?.map(({ id, tabHeader }) => (
                     <p
                       key={id}
-                      className={activeTab === id ? "active_tab" : ""}
+                      className={activeTab === id ? "active_tab" : "inactive_tab"}
                       onClick={() => setActiveTab(id)}
                     >
                       {tabHeader}
