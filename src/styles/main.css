@@ -7,7 +7,8 @@
 }
 @media screen and (max-width: 800px) {
   .layout_container .main_content_container {
-    margin-left: 120px;
+    margin-left: 90px;
+    padding: 20px;
   }
 }
 .layout_container .navbar_container {
@@ -127,11 +128,9 @@
 .layout_container .sidebar-container {
   background: white;
   width: 250px;
-  padding: auto 10px;
   box-shadow: rgba(33, 63, 125, 0.06) 0px 7px 29px 0px;
   height: 100vh;
   margin-top: 80px;
-  padding-top: 20px;
   padding-bottom: 100px;
   position: fixed;
   overflow: scroll;
@@ -143,6 +142,11 @@
   .layout_container .sidebar-container {
     width: -moz-fit-content;
     width: fit-content;
+  }
+}
+@media screen and (max-width: 600px) {
+  .layout_container .sidebar-container {
+    padding-top: 0px;
   }
 }
 .layout_container .sidebar-container .organization {

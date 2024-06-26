@@ -194,7 +194,7 @@ const HomePage = () => {
       <Layout>
          <div className="content_div">
           <div>
-              <p className="large-font">Users</p>
+              <p className="large-font bold">Users</p>
               <div className="detail_card_collection">
                 <DetailCard img={UserIcon} header="users" number={data?.length ? data?.length.toString() : '0'}/>
                 <DetailCard img={ActiveUsers} header="active users" number={activeUsers?.length ? activeUsers?.length?.toString() : '0'}/>
