@@ -20,9 +20,22 @@ export function splitNumberCumulatively({number, partSize}:SplitNumberProps):num
 }
 
 export function truncateString(str: string, delimiter: string, maxLength: number = 15): string {
+  if (str.length <= maxLength) {
+    return str;
+  }
+  
   const parts = str.split(delimiter);
-  if (parts.length < 2) return str;
+  if (parts.length < 2) {
+    return str.slice(0, maxLength) + '...';
+  }
 
   const [firstPart, secondPart] = parts;
-  return `${firstPart}${delimiter}...`;
+  if(firstPart.length >= maxLength){
+    return `${firstPart}${delimiter}...`;
+  }
+  const truncatedSecondPart = secondPart.length > maxLength - firstPart.length - delimiter.length
+    ? secondPart.slice(0, maxLength - firstPart.length - delimiter.length) + '...'
+    : secondPart;
+
+  return `${firstPart}${delimiter}${truncatedSecondPart}`;
 }
