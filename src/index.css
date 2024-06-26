@@ -55,13 +55,6 @@ h1 {
   font-size: 3.2em;
   line-height: 1.1;
 }
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
 .error_messages{
   color: red;
 }

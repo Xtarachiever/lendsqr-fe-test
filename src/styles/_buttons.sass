@@ -1,17 +1,21 @@
 .button
-      border-radius: 5px
+      border-radius: 8px
       border: 1px solid transparent
       padding: 1em 1.2em
       font-size: 1em
-      font-weight: 500
+      font-weight: 600
       font-family: inherit
       background-color: $lightBlue
       cursor: pointer
       transition: border-color 0.25s
       width: 100%
+      &:focus,
+      &:focus-visible
+            outline: 4px auto -webkit-focus-ring-color
       &:hover
             scale: 1.03
             transition: all .3s ease-in-out
+            border-color: #646cff
 .smaller_button
             padding: 0.8em 1em
 .status_button
@@ -31,3 +35,7 @@
 .pending
       color: $orange
       background: rgba($orange,0.2)
+.transparent_bg
+      background: transparent
+      border: 1px solid #545F7D
+      color: #545F7D

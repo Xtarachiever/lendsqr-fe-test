@@ -10,7 +10,7 @@ import { BsThreeDotsVertical } from "react-icons/bs";
 import { FiUserX } from "react-icons/fi";
 import { RiUserFollowLine } from "react-icons/ri";
 import { BsEye } from "react-icons/bs";
-import FilterCard from "../components/ReusableCards/FilterCard";
+import FilterCard from "../components/Forms/FilterCard";
 import { useNavigate } from "react-router-dom";
 import { storeUserDetailsInIndexedDB } from "../store/IndexedDB";
 import Button from "../components/ReusableButtons/Button";

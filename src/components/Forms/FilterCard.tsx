@@ -82,9 +82,10 @@ const FilterCard = ({ data, handleFilter, handleReset }: any) => {
                 name="Reset"
                 type="button"
                 onClick={() => handleReset(reset)}
-                style={{ padding: "10px", width: "100%" }}
+                style={{ padding: "10px", width: "90%" }}
+                transparent={true}
               />
-              <Button name="Filter" type="submit" style={{ padding: "10px" }} />
+              <Button name="Filter" type="submit" style={{ padding: "10px",width: "90%" }} />
             </div>
           </div>
         </div>
