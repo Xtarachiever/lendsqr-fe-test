@@ -1,25 +1,19 @@
-import { useState } from "react";
 import ReactPaginate from 'react-paginate';
 import { MdKeyboardArrowRight, MdKeyboardArrowLeft } from "react-icons/md";
 
 interface PaginateProps{
     itemsPerPage:number
     items:object[]
+    setItemOffset:any
 }
-const PaginatedItems = ({ itemsPerPage,items }:PaginateProps) => {
-    const [itemOffset, setItemOffset] = useState(0);
+const PaginatedItems = ({ itemsPerPage,items, setItemOffset }:PaginateProps) => {
+
   
-    const endOffset = itemOffset + itemsPerPage;
-    console.log(`Loading items from ${itemOffset} to ${endOffset}`);
-    // const currentItems = items.slice(itemOffset, endOffset);
     const pageCount = Math.ceil(items.length / itemsPerPage);
   
     // Invoke when user click to request another page.
     const handlePageClick = (event:any) => {
       const newOffset = (event.selected * itemsPerPage) % items.length;
-      console.log(
-        `User requested page number ${event.selected}, which is offset ${newOffset}`
-      );
       setItemOffset(newOffset);
     };
   

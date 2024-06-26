@@ -5,10 +5,9 @@ import {
     getPaginationRowModel,
     useReactTable,
   } from '@tanstack/react-table';
-  import { useEffect, Dispatch, SetStateAction } from 'react';
+  import { useEffect, useState, Dispatch, SetStateAction } from 'react';
   import { BsFilter } from 'react-icons/bs';
-  import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from 'react-icons/md';
-import splitNumberCumulatively, { SplitNumberProps } from '../../utilities/Function';
+import {splitNumberCumulatively,  SplitNumberProps } from '../../utilities/Function';
 import PaginatedItems from '../Pagination/ReactPaginate';
 
   interface BasicTableProps {
@@ -20,7 +19,9 @@ import PaginatedItems from '../Pagination/ReactPaginate';
   }
   
   export default function BasicTable({ data, columns, rowsPerPage = 20, setFilterPopUp, filterPopUp }: BasicTableProps) {
-  
+
+    const [itemOffset, setItemOffset] = useState(0);
+
     const table = useReactTable({
       data,
       columns,
@@ -28,18 +29,19 @@ import PaginatedItems from '../Pagination/ReactPaginate';
       getPaginationRowModel: getPaginationRowModel(),
       // getSortedRowModel: getSortedRowModel(),
       getFilteredRowModel: getFilteredRowModel(),
+      state: {
+        pagination: {
+          pageIndex: Math.floor(itemOffset / rowsPerPage),
+          pageSize: rowsPerPage,
+        },
+      },
+      onPaginationChange: () => {
+        const newPaginationState = { pageIndex: Math.floor(itemOffset / rowsPerPage), pageSize: rowsPerPage };
+        setItemOffset(newPaginationState.pageIndex * newPaginationState.pageSize);
+      },
     });
 
     const filteredRows = table.getFilteredRowModel().rows;
-
-    // const noOfPages =
-    // filteredRows && Array.isArray(filteredRows)
-    //   ? Math.ceil(filteredRows.length / rowsPerPage)
-    //   : 0;
-
-    //   // Can be passed as props at anytime
-    // const maxPagesToShow = 10;
-    
     
     useEffect(()=>{
       table.setPageSize(rowsPerPage);
@@ -116,7 +118,7 @@ import PaginatedItems from '../Pagination/ReactPaginate';
               <p>out of {filteredRows.length}</p>
             </div>
           </div>
-          <PaginatedItems items={data} itemsPerPage={10}/>
+          <PaginatedItems items={data} itemsPerPage={rowsPerPage} setItemOffset={setItemOffset} />
         </div>
       </div>
     );

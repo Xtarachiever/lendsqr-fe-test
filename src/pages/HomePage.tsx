@@ -14,6 +14,7 @@ import FilterCard from "../components/ReusableCards/FilterCard";
 import { useNavigate } from "react-router-dom";
 import { storeUserDetailsInIndexedDB } from "../store/IndexedDB";
 import Button from "../components/ReusableButtons/Button";
+import { truncateString } from "../utilities/Function";
 
 type formProps ={
   organization:string
@@ -142,7 +143,8 @@ const HomePage = () => {
     },
     {
       header:'EMAIL',
-      accessorKey: 'email',
+      accessorKey: ('email'),
+      accessorFn: (row:any) => truncateString(row?.email,'@',15)
 
     },
     {
@@ -153,7 +155,7 @@ const HomePage = () => {
     {
       header:'DATE JOINED',
       accessorKey: 'createdAt',
-      accessorFn: (row:any) => (new Date(row.createdAt).toLocaleString('en-US', options))
+      accessorFn: (row:any) => truncateString(new Date(row.createdAt).toLocaleString('en-US', options),'at')
     },
     {
       header: 'STATUS',

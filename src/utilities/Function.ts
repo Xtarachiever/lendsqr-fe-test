@@ -4,7 +4,7 @@ export interface SplitNumberProps{
     partSize:number
 }
 
-function splitNumberCumulatively({number, partSize}:SplitNumberProps):number[] {
+export function splitNumberCumulatively({number, partSize}:SplitNumberProps):number[] {
     const result = [];
     let cumulativeSum = 0;
     
@@ -19,4 +19,11 @@ function splitNumberCumulatively({number, partSize}:SplitNumberProps):number[] {
     return result;
 }
 
-export default splitNumberCumulatively;
+export function truncateString(str: string, delimiter: string, maxLength: number = 15): string {
+  const parts = str.split(delimiter);
+  if (parts.length < 2) return str;
+
+  const [firstPart, secondPart] = parts;
+  const truncatedPart = secondPart.length > maxLength ? secondPart.slice(0, maxLength) + '...' : secondPart;
+  return `${firstPart}${delimiter}...`;
+}

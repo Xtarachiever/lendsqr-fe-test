@@ -16,8 +16,6 @@ const User = () => {
 
   const [retrieveUserDetails, setRetrieveUserDetails] = useState<any>([]);
 
-  console.log(!retrieveUserDetails);
-
   useEffect(() => {
     retrieveUserDetailsFromIndexedDB(params?.user)
       .then((storedData) => {
