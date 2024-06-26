@@ -24,6 +24,5 @@ export function truncateString(str: string, delimiter: string, maxLength: number
   if (parts.length < 2) return str;
 
   const [firstPart, secondPart] = parts;
-  const truncatedPart = secondPart.length > maxLength ? secondPart.slice(0, maxLength) + '...' : secondPart;
   return `${firstPart}${delimiter}...`;
 }
