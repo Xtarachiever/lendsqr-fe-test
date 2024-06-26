@@ -5,7 +5,7 @@
 }
 @media screen and (max-width: 800px) {
   .layout_container .main_content_container {
-    margin-left: 100px;
+    margin-left: 120px;
   }
 }
 .layout_container .navbar_container {
@@ -154,7 +154,7 @@
     display: none;
   }
   .layout_container .sidebar-container .organization img {
-    width: 30px;
+    width: 20px;
   }
 }
 .layout_container .sidebar-container .organization:hover {
@@ -196,61 +196,61 @@
   height: 150px;
 }
 
-.table-div {
+.table-wrapper .table-div {
   background-color: white;
   border: 1px solid rgba(57, 205, 204, 0.06);
   box-shadow: 0px 2px 20px rgba(0, 0, 0, 0.05);
   overflow: scroll;
   padding: 15px;
 }
-.table-div table {
+.table-wrapper .table-div table {
   width: 100%;
   border-collapse: collapse;
   table-layout: fixed;
   min-width: 760px;
   border-spacing: 20px;
 }
-.table-div table th, .table-div table td {
+.table-wrapper .table-div table th, .table-wrapper .table-div table td {
   word-wrap: break-word;
   overflow-wrap: break-word;
   white-space: normal;
   padding: 10px;
 }
-.table-div table thead {
+.table-wrapper .table-div table thead {
   text-align: left;
 }
-.table-div table thead tr {
+.table-wrapper .table-div table thead tr {
   font-size: 11px;
 }
-.table-div table thead tr th {
+.table-wrapper .table-div table thead tr th {
   cursor: pointer;
 }
-.table-div table thead tr th:last-child {
+.table-wrapper .table-div table thead tr th:last-child {
   width: 40px;
 }
-.table-div table thead tr th .header {
+.table-wrapper .table-div table thead tr th .header {
   display: flex;
   align-items: center;
 }
-.table-div table thead tr th .header span {
+.table-wrapper .table-div table thead tr th .header span {
   margin-left: 5px;
 }
-.table-div table tbody {
+.table-wrapper .table-div table tbody {
   text-align: left;
   z-index: 1;
 }
-.table-div table tbody tr:not(:last-child) {
+.table-wrapper .table-div table tbody tr:not(:last-child) {
   border-bottom: 2px solid rgba(33, 63, 125, 0.1);
 }
-.table-div table tbody tr td {
+.table-wrapper .table-div table tbody tr td {
   width: auto;
   position: relative;
 }
-.table-div table tbody tr td .popup-action {
+.table-wrapper .table-div table tbody tr td .popup-action {
   position: relative;
   cursor: pointer;
 }
-.table-div table tbody tr td .popup-action .popup {
+.table-wrapper .table-div table tbody tr td .popup-action .popup {
   background-color: white;
   box-shadow: 0px 2px 20px rgba(0, 0, 0, 0.05);
   width: 200px;
@@ -262,30 +262,45 @@
   top: 20px;
   z-index: 2;
 }
-.table-div table tbody tr td .popup-action .popup p {
+.table-wrapper .table-div table tbody tr td .popup-action .popup p {
   display: flex;
   align-items: center;
   padding-bottom: 10px;
 }
-.table-div table tbody tr td .popup-action .popup p svg {
+.table-wrapper .table-div table tbody tr td .popup-action .popup p svg {
   margin-right: 8px;
 }
-.table-div .pagination {
+.table-wrapper .pagination-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 30px auto;
+  align-items: end;
+  gap: 20px;
+}
+@media screen and (max-width: 960px) {
+  .table-wrapper .pagination-wrapper {
+    margin: 15px auto;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+.table-wrapper .pagination-wrapper .pagination {
   padding-top: 15px;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 @media screen and (max-width: 650px) {
-  .table-div .pagination {
+  .table-wrapper .pagination-wrapper .pagination {
     flex-direction: column;
   }
 }
-.table-div .pagination .pageIndex {
+.table-wrapper .pagination-wrapper .pagination .pageIndex {
   display: flex;
   align-items: center;
 }
-.table-div .pagination .pageIndex button.pagesArr {
+.table-wrapper .pagination-wrapper .pagination .pageIndex button.pagesArr {
   outline: none;
   border: none;
   margin: 0px 5px;
@@ -294,8 +309,8 @@
   background-color: transparent;
   color: rgba(33, 63, 125, 0.6);
 }
-.table-div .pagination .pageIndex button.next,
-.table-div .pagination .pageIndex button.prev {
+.table-wrapper .pagination-wrapper .pagination .pageIndex button.next,
+.table-wrapper .pagination-wrapper .pagination .pageIndex button.prev {
   border: none;
   background-color: rgba(33, 63, 125, 0.2);
   width: 30px;
@@ -304,8 +319,8 @@
   margin: 0px 10px;
   cursor: pointer;
 }
-.table-div .pagination .pageIndex button.next svg,
-.table-div .pagination .pageIndex button.prev svg {
+.table-wrapper .pagination-wrapper .pagination .pageIndex button.next svg,
+.table-wrapper .pagination-wrapper .pagination .pageIndex button.prev svg {
   color: #213F7D;
 }
 
@@ -354,6 +369,38 @@
 .user_details_container .section p .header,
 .user_details_container .section .details .header {
   font-size: 12px;
+}
+
+.paginate_container {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.paginate_container li {
+  display: flex;
+  padding: 0px 8px;
+  cursor: pointer;
+}
+.paginate_container .previous,
+.paginate_container .next {
+  background: rgba(33, 63, 125, 0.1);
+  padding: 3px 6px;
+  border-radius: 4px;
+}
+.paginate_container .previous svg,
+.paginate_container .next svg {
+  margin-top: 2px;
+}
+.paginate_container a {
+  color: #545F7D;
+  line-height: normal;
+}
+.paginate_container .active_link {
+  color: #213F7D;
+  font-weight: bold;
+}
+.paginate_container .disabled_link {
+  color: rgba(33, 63, 125, 0.4);
 }
 
 .content_div .detail_card_collection {
