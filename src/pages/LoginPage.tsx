@@ -2,7 +2,7 @@ import Input from "../components/ReusableInputs/Input";
 import PasswordInput from "../components/ReusableInputs/PasswordInput";
 import Button from "../components/ReusableButtons/Button";
 import useLoginHook from "../hooks/LoginHook";
-import welcomeImg from "/welcome.svg";
+import welcomeImg from "/welcome.png";
 import { useNavigate } from "react-router-dom";
 import Logo from "/logo.svg";
 
@@ -29,7 +29,7 @@ const LoginPage = () => {
   return (
     <div>
       <div className="welcome-page">
-        <div className="absolute">
+        <div className="absolute logo">
           <img src={Logo} alt="Logo" />
         </div>
         <div className="img">

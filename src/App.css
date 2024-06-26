@@ -10,7 +10,7 @@
   width: 100%;
   min-height: 100vh;
   align-items: center;
-  padding: 0px 20px;
+  background-color: #FBFBFB;
 }
 .welcome-page .img{
   margin-right: 30px;
@@ -31,15 +31,16 @@
   padding: 30px;
   min-width: 380px;
   position: absolute;
-  transform: translateY(-50%);
+  transform: translate(-50%, -50%);
   top: 50%;
-  max-width: 80%;
-  right: 20px;
+  left: 50%;
+  max-width: 540px;
 }
 .welcome-page .form-div{
   width: 100%;
   min-height: inherit;
   position: relative;
+  background-color: white;  
 }
 .welcome-page .form-div .form .welcome-title{
   padding-bottom: 30px;
@@ -62,11 +63,7 @@
 .forgot-password{
   font-size: 14px;
   padding: 20px 0px 20px 0px;
-}
-@media screen and (max-width:1400px){
-  .welcome-page .form-div .form{
-    max-width: 90%;
-  }
+  cursor: pointer;
 }
 @media screen and (max-width:760px){
   .welcome-page{
@@ -85,12 +82,14 @@
   .welcome-page .img,
   .welcome-page .form-div{
     min-height: auto;
+    padding: 40px;
   }
   .welcome-page .form-div .form,
   .welcome-page .img img{
     position: relative;
     transform: translate(0px);
     top: 0px;
+    left: 0px;
   }
   .welcome-page .form-div .form{
     padding: 10px;

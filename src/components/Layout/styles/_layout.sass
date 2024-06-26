@@ -1,9 +1,11 @@
 @import '../../../styles/_mixins'
 .layout_container
     .main_content_container
-        margin-left: 320px
+        margin-left: 250px
         margin-top: 100px
         padding: 30px
+        padding-left: 40px
+        padding-right: 40px
         @media screen and (max-width:800px)
             margin-left: 120px
     .navbar_container
@@ -15,6 +17,8 @@
         background: $white
         box-shadow: $faint-shadow
         z-index: 10
+        img
+            cursor: pointer
         .search_input
             width: 100%
             max-width: 500px
@@ -85,7 +89,8 @@
                 display: flex
     .sidebar-container
         background: white
-        width: 300px
+        width: 250px
+        padding: auto 10px
         box-shadow: $faint-shadow
         height: 100vh
         margin-top: 80px
@@ -95,6 +100,7 @@
         overflow: scroll
         top: 0px
         min-height: 100%
+        font-size: $mid-font
         @media screen and (max-width:800px)
             width: fit-content
         .organization
@@ -102,7 +108,7 @@
             align-items: center
             padding-bottom: 10px
             padding-top: 10px
-            padding-left: 30px
+            padding-left: 25px
             cursor: pointer
             @media screen and (max-width:800px)
                 padding-right: 30px

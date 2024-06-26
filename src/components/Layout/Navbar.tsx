@@ -6,12 +6,14 @@ import { IoSearchOutline } from "react-icons/io5";
 import { IoMdArrowDropdown } from "react-icons/io";
 import { IoIosArrowDown } from "react-icons/io";
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const Navbar = () => {
-  const [openProfile, setOpenProfile] = useState<boolean>(false)
+  const [openProfile, setOpenProfile] = useState<boolean>(false);
+  const navigate = useNavigate();
   return (
     <div className='navbar_container'>
-      <div>
+      <div onClick={()=>navigate('/users')}>
         <img src={Logo} alt='Logo'/>
       </div>
       <div className='search_input'>

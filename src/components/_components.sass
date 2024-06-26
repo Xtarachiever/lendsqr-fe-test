@@ -41,6 +41,7 @@
             tbody
                 text-align: left
                 z-index: 1
+                font-size: 14px
                 tr
                     &:not(:last-child)
                         border-bottom: 2px solid rgba($color: $darkBlue, $alpha: 0.1)
@@ -53,7 +54,7 @@
                             .popup
                                 background-color: white
                                 box-shadow: 0px 2px 20px rgba(black, 0.05)
-                                width: 200px
+                                width: 160px
                                 padding: 10px 20px
                                 color: $darkBlue
                                 border-radius: 5px
@@ -65,6 +66,8 @@
                                     display: flex
                                     align-items: center
                                     padding-bottom: 10px
+                                    &:hover
+                                        color: $lightBlue
                                     svg
                                         margin-right: 8px
     .pagination-wrapper

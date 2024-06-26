@@ -1,7 +1,9 @@
 .layout_container .main_content_container {
-  margin-left: 320px;
+  margin-left: 250px;
   margin-top: 100px;
   padding: 30px;
+  padding-left: 40px;
+  padding-right: 40px;
 }
 @media screen and (max-width: 800px) {
   .layout_container .main_content_container {
@@ -19,6 +21,9 @@
   background: #ffffff;
   box-shadow: rgba(33, 63, 125, 0.06) 0px 7px 29px 0px;
   z-index: 10;
+}
+.layout_container .navbar_container img {
+  cursor: pointer;
 }
 .layout_container .navbar_container .search_input {
   width: 100%;
@@ -121,7 +126,8 @@
 }
 .layout_container .sidebar-container {
   background: white;
-  width: 300px;
+  width: 250px;
+  padding: auto 10px;
   box-shadow: rgba(33, 63, 125, 0.06) 0px 7px 29px 0px;
   height: 100vh;
   margin-top: 80px;
@@ -131,6 +137,7 @@
   overflow: scroll;
   top: 0px;
   min-height: 100%;
+  font-size: 13px;
 }
 @media screen and (max-width: 800px) {
   .layout_container .sidebar-container {
@@ -143,7 +150,7 @@
   align-items: center;
   padding-bottom: 10px;
   padding-top: 10px;
-  padding-left: 30px;
+  padding-left: 25px;
   cursor: pointer;
 }
 @media screen and (max-width: 800px) {
@@ -238,6 +245,7 @@
 .table-wrapper .table-div table tbody {
   text-align: left;
   z-index: 1;
+  font-size: 14px;
 }
 .table-wrapper .table-div table tbody tr:not(:last-child) {
   border-bottom: 2px solid rgba(33, 63, 125, 0.1);
@@ -253,7 +261,7 @@
 .table-wrapper .table-div table tbody tr td .popup-action .popup {
   background-color: white;
   box-shadow: 0px 2px 20px rgba(0, 0, 0, 0.05);
-  width: 200px;
+  width: 160px;
   padding: 10px 20px;
   color: #213F7D;
   border-radius: 5px;
@@ -266,6 +274,9 @@
   display: flex;
   align-items: center;
   padding-bottom: 10px;
+}
+.table-wrapper .table-div table tbody tr td .popup-action .popup p:hover {
+  color: #39CDCC;
 }
 .table-wrapper .table-div table tbody tr td .popup-action .popup p svg {
   margin-right: 8px;
